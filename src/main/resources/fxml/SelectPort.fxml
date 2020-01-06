@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="dsv.mma.filesender.client.SelectPortController">
+  <children>
+    <Label layoutX="159.0" layoutY="41.0" prefWidth="82.0" text="Select port:" />
+    <TextField fx:id="portField" layoutX="59.0" layoutY="87.0" prefWidth="168.0" />
+    <Button fx:id="portSubmitBtn" onAction="#selectPortAction" layoutX="254.0" layoutY="87.0" mnemonicParsing="false" text="OK" />
+  </children>
+</AnchorPane>

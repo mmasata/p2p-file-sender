@@ -1,0 +1,8 @@
+dsv\mma\filesender\GlobalVariables.class
+dsv\mma\filesender\client\FileSenderController.class
+dsv\mma\filesender\communication\MessageBuilder.class
+dsv\mma\filesender\client\SelectPortController.class
+dsv\mma\filesender\MainApp.class
+dsv\mma\filesender\server\SocketWorker.class
+dsv\mma\filesender\communication\Message.class
+dsv\mma\filesender\server\SocketServer.class
