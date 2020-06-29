@@ -57,11 +57,11 @@ public class Message implements Serializable {
         return ipOfDroppedNeighbourNext;
     }
 
-    public void setIpOfDroppedNeighbourNext(String ipOfDroppedNeighbourNext) {
+    public synchronized void setIpOfDroppedNeighbourNext(String ipOfDroppedNeighbourNext) {
         this.ipOfDroppedNeighbourNext = ipOfDroppedNeighbourNext;
     }
 
-    public String getIpOfDroppedNeighbourPrevious() {
+    public synchronized String getIpOfDroppedNeighbourPrevious() {
         return ipOfDroppedNeighbourPrevious;
     }
 

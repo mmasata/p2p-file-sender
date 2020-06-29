@@ -291,13 +291,13 @@ public class SocketWorker implements Runnable {
     }
     
     public static synchronized void goNextSocket(Message message) throws IOException{
-       controller.addToServerLog("FIX - Jdu na Next: " + GlobalVariables.getNextNode());
+       //controller.addToServerLog("FIX - Jdu na Next: " + GlobalVariables.getNextNode());
        Socket socket = socketRequest(GlobalVariables.getNextNode(), message);
        socket.close();   
     }
     
     public static synchronized void goPreviousSocket(Message message) throws IOException{
-       controller.addToServerLog("FIX - Jdu na Previous: " + GlobalVariables.getPreviousNode());
+       //controller.addToServerLog("FIX - Jdu na Previous: " + GlobalVariables.getPreviousNode());
        Socket socket = socketRequest(GlobalVariables.getPreviousNode(), message);
        socket.close();
         

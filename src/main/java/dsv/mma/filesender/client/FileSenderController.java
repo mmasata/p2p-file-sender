@@ -297,18 +297,26 @@ public class FileSenderController implements Initializable {
                     //pripad ze je nas 3 a vice v kruhu
                     Message droppedMessage = MessageBuilder.fixDropMessage(GlobalVariables.getLeadNode());
                     if(SocketWorker.isMyNextDropped(droppedMessage)){
-                       droppedMessage.setIpOfDroppedNeighbourNext(GlobalVariables.getMyIpAddress());
+                       addToServerLog("Fixuju - chci doleva, znam praveho");
+                       String ip = GlobalVariables.getMyIpAddress();
+                       addToServerLog("Fix checkpoint 1");
+                       droppedMessage.setIpOfDroppedNeighbourNext(ip);
+                       addToServerLog("Fix checkpoint 2");
                        droppedMessage.setMessageType("fixDropGoPrevious");
+                       addToServerLog("Fix checkpoint 3");
                        //jdu doleva (previous)
                        SocketWorker.goPreviousSocket(droppedMessage);
                     }
                     else if(SocketWorker.isMyPreviousDropped(droppedMessage)){
-                        droppedMessage.setIpOfDroppedNeighbourPrevious(GlobalVariables.getMyIpAddress());
+                        addToServerLog("Fixuju - chci doprava, znam leveho");
+                        String ip = GlobalVariables.getMyIpAddress();
+                        droppedMessage.setIpOfDroppedNeighbourPrevious(ip);
                         droppedMessage.setMessageType("fixDropGoNext");
                         //jdu doprava (next)
                         SocketWorker.goNextSocket(droppedMessage);
                     }
                     else {
+                        addToServerLog("Fixuju - jdu doprava, neznam leveho ani praveho");
                         //jdu doprava a preposlu message
                         droppedMessage.setMessageType("fixDropGoNext");
                         SocketWorker.goNextSocket(droppedMessage);
